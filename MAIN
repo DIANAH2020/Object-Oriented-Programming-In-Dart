@@ -1,0 +1,44 @@
+
+class Animal:
+    def make_sound(self):
+        pass
+
+class Dog(Animal):
+    def make_sound(self):
+        return "Woof!"
+
+
+class Puppy(Dog):
+    def make_sound(self):
+        return "Yip!"
+
+
+class FileReader:
+    def __init__(self, filename):
+        self.filename = filename
+
+    def read_data(self):
+        with open(self.filename, 'r') as file:
+            return file.read()
+
+
+def print_numbers():
+    for i in range(1, 6):
+        print(i)
+
+
+file_reader = FileReader("data.txt")
+file_data = file_reader.read_data()
+print("Data from file:", file_data)
+
+
+dog = Dog()
+puppy = Puppy()
+
+
+print("Dog makes sound:", dog.make_sound())
+print("Puppy makes sound:", puppy.make_sound())
+
+
+print("Numbers from 1 to 5:")
+print_numbers()
